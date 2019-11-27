@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="9s1-EF-rv1" id="1mi-LA-Ke4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qep-AG-mEj">
+            <rect key="frame" x="0.0" y="0.0" width="199" height="390"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9s1-EF-rv1" customClass="StrokedButton" customModule="Calculator" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="95.5" width="199" height="199"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="9s1-EF-rv1" secondAttribute="height" multiplier="1:1" id="O4c-it-kRi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
+                    <state key="normal" title="2">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                            <color key="value" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                            <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                            <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="disabledColor">
+                            <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="9s1-EF-rv1" firstAttribute="height" secondItem="Qep-AG-mEj" secondAttribute="height" priority="999" id="5bc-zr-vC6"/>
+                <constraint firstItem="9s1-EF-rv1" firstAttribute="height" relation="lessThanOrEqual" secondItem="Qep-AG-mEj" secondAttribute="height" id="6p5-qG-07n"/>
+                <constraint firstItem="9s1-EF-rv1" firstAttribute="centerY" secondItem="Qep-AG-mEj" secondAttribute="centerY" id="KDE-Bn-ZI5"/>
+                <constraint firstItem="9s1-EF-rv1" firstAttribute="centerX" secondItem="Qep-AG-mEj" secondAttribute="centerX" id="dVM-OG-30e"/>
+                <constraint firstItem="9s1-EF-rv1" firstAttribute="width" secondItem="Qep-AG-mEj" secondAttribute="width" priority="999" id="jSo-sb-iXr"/>
+                <constraint firstItem="9s1-EF-rv1" firstAttribute="width" relation="lessThanOrEqual" secondItem="Qep-AG-mEj" secondAttribute="width" id="oYU-1s-xQZ"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-260.14492753623188" y="770.75892857142856"/>
+        </view>
+    </objects>
+</document>
