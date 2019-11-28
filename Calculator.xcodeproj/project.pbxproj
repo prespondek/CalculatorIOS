@@ -21,6 +21,8 @@
 		C6291AE9238D5B1200958699 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6291AE8238D5B1200958699 /* SplashViewController.swift */; };
 		C6291AEE238DD3F600958699 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6291AED238DD3F600958699 /* Extensions.swift */; };
 		C6291AF0238DE49800958699 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6291AEF238DE49800958699 /* Operation.swift */; };
+		C648A27B238F7C2400DED8F0 /* OperationNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C648A27A238F7C2400DED8F0 /* OperationNumber.swift */; };
+		C648A27D238F7C3800DED8F0 /* OperationExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C648A27C238F7C3800DED8F0 /* OperationExpression.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		C6291AE8238D5B1200958699 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C6291AED238DD3F600958699 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C6291AEF238DE49800958699 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		C648A27A238F7C2400DED8F0 /* OperationNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationNumber.swift; sourceTree = "<group>"; };
+		C648A27C238F7C3800DED8F0 /* OperationExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationExpression.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,8 @@
 			children = (
 				C6291AED238DD3F600958699 /* Extensions.swift */,
 				C6291AEF238DE49800958699 /* Operation.swift */,
+				C648A27A238F7C2400DED8F0 /* OperationNumber.swift */,
+				C648A27C238F7C3800DED8F0 /* OperationExpression.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -321,6 +327,8 @@
 			files = (
 				C6291AA3238D059E00958699 /* AppDelegate.swift in Sources */,
 				C6291ADA238D13FD00958699 /* StokedViews.swift in Sources */,
+				C648A27B238F7C2400DED8F0 /* OperationNumber.swift in Sources */,
+				C648A27D238F7C3800DED8F0 /* OperationExpression.swift in Sources */,
 				C6291AF0238DE49800958699 /* Operation.swift in Sources */,
 				C6291AE3238D4BF300958699 /* CalculatorViewController.swift in Sources */,
 				C6291AE0238D352000958699 /* CalculatorButtonView.swift in Sources */,

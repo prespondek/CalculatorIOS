@@ -16,14 +16,14 @@ class CalculatorViewController : UIViewController {
     @IBOutlet weak var outputLabel: UILabel!
     
     var output : String? = nil
-    var op = Operation()
+    var op = OperationExpression()
     var pendingSign : Character? = nil
     
     @objc func numberButtonPressed(_ sender: UIButton) {
         guard let num = sender.titleLabel?.text else { return }
     
         if output == nil || output == "0" {
-            if (num == "0" && op.isEmpty) { return }
+            if (num == "0" && op.isEmpty()) { return }
             else {
                 output = num
             }
@@ -45,8 +45,8 @@ class CalculatorViewController : UIViewController {
         pendingSign = sign.popLast() ?? pendingSign
         // check if we can safely collapse the operation and show it
         if let sign1 = op.lastSign , let sign2 = pendingSign {
-            if Operation.signPriority(sign1) ==
-               Operation.signPriority(sign2) {
+            if OperationExpression.signPriority(sign1) ==
+               OperationExpression.signPriority(sign2) {
                 printOperation()
             }
         }
@@ -58,7 +58,8 @@ class CalculatorViewController : UIViewController {
         printOperation()
         
         pendingSign = nil
-        output = String(op.value)
+        output = nil
+        output = String(op.calculate())
     }
     
     @objc func cancelButtonPressed() {
@@ -69,20 +70,24 @@ class CalculatorViewController : UIViewController {
     }
     
     func pushOperation() {
-        let output = self.output ?? "0"
-        switch pendingSign {
+        if op.isEmpty() && output == nil {
+            self.output = "0"
+        }
+        if let output = self.output {
+            switch pendingSign {
             case "+": op += Double(output) ?? 0
             case "−": op -= Double(output) ?? 0
             case "×": op *= Double(output) ?? 0
             case "÷": op /= Double(output) ?? 0
             default: op.set(Double(output) ?? 0)
+            }
         }
         
     }
 
     
     func printOperation() {
-        let num = op.calculate
+        let num = op.calculate()
         var str : String
         if num.isNaN { str = "Not a Number" }
         else if num.isInfinite { str = "Infinite" }
