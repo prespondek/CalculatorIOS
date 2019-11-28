@@ -36,6 +36,7 @@ class CalculatorViewController : UIViewController {
             outputLabel.text = output
         }
     }
+    
     @objc func operatorButtonPressed(_ sender: UIButton) {
         guard var sign = sender.titleLabel?.text else {
             assert(false, "invalid operator sign")
@@ -59,7 +60,6 @@ class CalculatorViewController : UIViewController {
         
         pendingSign = nil
         output = nil
-        output = String(op.calculate())
     }
     
     @objc func cancelButtonPressed() {
@@ -82,10 +82,8 @@ class CalculatorViewController : UIViewController {
             default: op.set(Double(output) ?? 0)
             }
         }
-        
     }
 
-    
     func printOperation() {
         let num = op.calculate()
         var str : String

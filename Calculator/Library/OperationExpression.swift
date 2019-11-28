@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ An conplex math expression
+ This takes care of order of operation. Also could be easily expanded to allow brakets ().
+ */
 class OperationExpression : Operation {
     private var operators : Array<Character>
     private var operands : Array<Operation>

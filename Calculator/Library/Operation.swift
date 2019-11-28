@@ -8,9 +8,9 @@
 
 import Foundation
 
-// This takes care of order of operation. Also could be easily expanded to allow brakets ().
-// An individual "Operation" could be a complex expression or just a simple number.
-
+/**
+ An individual "Operation" could be a complex expression or just a simple number. 
+*/
 protocol Operation {
     
     func isEmpty() -> Bool

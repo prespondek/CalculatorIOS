@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ A simple float that interfaces with Operation.
+ */
 class OperationNumber : Operation {
     func copy() -> Operation {
         guard let value = _value else { return OperationNumber() }

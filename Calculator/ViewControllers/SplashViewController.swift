@@ -9,11 +9,11 @@
 import UIKit
 
 class SplashViewController : UIViewController {
-   override func viewDidLoad() {
-    super.viewDidLoad()
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-        self.performSegue( withIdentifier: "SplashSerge", sender: self)
-    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            self.performSegue( withIdentifier: "SplashSerge", sender: self)
+        }
     }
 }
 
