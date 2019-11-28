@@ -1,0 +1,5 @@
+osx_image: xcode11.2
+language: swift
+xcode_project: Calculator.xcodeproj # path to your xcodeproj folder
+xcode_scheme: Calculator
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPad Pro (9.7-inch)
