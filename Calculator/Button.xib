@@ -17,10 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9s1-EF-rv1" customClass="StrokedButton" customModule="Calculator" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="95.5" width="199" height="199"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="9s1-EF-rv1" secondAttribute="height" multiplier="1:1" id="O4c-it-kRi"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="0.0" width="199" height="390"/>
                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
                     <state key="normal" title="2">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -49,12 +46,12 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="9s1-EF-rv1" firstAttribute="height" secondItem="Qep-AG-mEj" secondAttribute="height" priority="999" id="5bc-zr-vC6"/>
-                <constraint firstItem="9s1-EF-rv1" firstAttribute="height" relation="lessThanOrEqual" secondItem="Qep-AG-mEj" secondAttribute="height" id="6p5-qG-07n"/>
+                <constraint firstItem="9s1-EF-rv1" firstAttribute="leading" secondItem="Qep-AG-mEj" secondAttribute="leading" id="664-mw-gmy"/>
+                <constraint firstAttribute="bottom" secondItem="9s1-EF-rv1" secondAttribute="bottom" id="96I-AC-s6h"/>
                 <constraint firstItem="9s1-EF-rv1" firstAttribute="centerY" secondItem="Qep-AG-mEj" secondAttribute="centerY" id="KDE-Bn-ZI5"/>
+                <constraint firstAttribute="trailing" secondItem="9s1-EF-rv1" secondAttribute="trailing" id="NLM-1x-BMV"/>
                 <constraint firstItem="9s1-EF-rv1" firstAttribute="centerX" secondItem="Qep-AG-mEj" secondAttribute="centerX" id="dVM-OG-30e"/>
-                <constraint firstItem="9s1-EF-rv1" firstAttribute="width" secondItem="Qep-AG-mEj" secondAttribute="width" priority="999" id="jSo-sb-iXr"/>
-                <constraint firstItem="9s1-EF-rv1" firstAttribute="width" relation="lessThanOrEqual" secondItem="Qep-AG-mEj" secondAttribute="width" id="oYU-1s-xQZ"/>
+                <constraint firstItem="9s1-EF-rv1" firstAttribute="top" secondItem="Qep-AG-mEj" secondAttribute="top" id="e4x-L3-LsO"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

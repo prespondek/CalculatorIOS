@@ -8,115 +8,68 @@
 
 import UIKit
 
-class CalculatorViewController : UIViewController {
+class CalculatorViewController : UIViewController, CalculatorViewModelObserver {
+    
     @IBOutlet var numberbuttons: [CalculatorButtonView]?
     @IBOutlet var operatorbuttons: [CalculatorButtonView]?
+    @IBOutlet var modifierButtons:
+        [CalculatorButtonView]?
     @IBOutlet weak var cancelButton: CalculatorButtonView!
     @IBOutlet weak var equalsButton: CalculatorButtonView!
     @IBOutlet weak var outputLabel: UILabel!
     
-    var output : String? = nil
-    var op = OperationExpression()
-    var pendingSign : Character? = nil
+    lazy var viewModel : CalculatorViewModel = CalculatorViewModel(observer: self)
+    
+    func calculatorOutput(_ str: String) {
+        self.outputLabel.text = str
+        if outputLabel.isTruncated == true {
+            //output?.removeLast()
+        }
+    }
     
     @objc func numberButtonPressed(_ sender: UIButton) {
         guard let num = sender.titleLabel?.text else { return }
-    
-        if output == nil || output == "0" {
-            if (num == "0" && op.isEmpty()) { return }
-            else {
-                output = num
-            }
-        } else {
-            output?.append(num)
-        }
-        outputLabel.text = output
-        if outputLabel.isTruncated == true {
-            output?.removeLast()
-            outputLabel.text = output
-        }
+        viewModel.insertCharacter(pos:0, char: num.first ?? "0")
     }
     
     @objc func operatorButtonPressed(_ sender: UIButton) {
-        guard var sign = sender.titleLabel?.text else {
-            assert(false, "invalid operator sign")
-            return }
-        pushOperation()
-        output = nil
-        pendingSign = sign.popLast() ?? pendingSign
-        // check if we can safely collapse the operation and show it
-        if let sign1 = op.lastSign , let sign2 = pendingSign {
-            if OperationExpression.signPriority(sign1) ==
-               OperationExpression.signPriority(sign2) {
-                printOperation()
-            }
-        }
+        guard let sign = sender.titleLabel?.text else { return }
+        viewModel.insertFunction(pos:0, sign: sign.first ?? "0")
+    }
+    
+    @objc func modifierButtonPressed(_ sender: UIButton) {
+        guard let sign = sender.titleLabel?.text else { return }
+        viewModel.applyModifier(sign: sign.first ?? "0")
     }
     
     @objc func equalsButtonPressed() {
-        pushOperation()
-        op.collapse()
-        printOperation()
-        
-        pendingSign = nil
-        output = nil
+        viewModel.calculate()
     }
     
     @objc func cancelButtonPressed() {
-        output = nil
-        op.clear()
-        pendingSign = nil
-        outputLabel.text = "0"
-    }
-    
-    func pushOperation() {
-        if op.isEmpty() && output == nil {
-            self.output = "0"
-        }
-        if let output = self.output {
-            switch pendingSign {
-            case "+": op += Double(output) ?? 0
-            case "−": op -= Double(output) ?? 0
-            case "×": op *= Double(output) ?? 0
-            case "÷": op /= Double(output) ?? 0
-            default: op.set(Double(output) ?? 0)
-            }
-        }
+        viewModel.reset()
     }
 
-    func printOperation() {
-        let num = op.calculate()
-        var str : String
-        if num.isNaN { str = "Not a Number" }
-        else if num.isInfinite { str = "Infinite" }
-        else {
-            str = String(num)
-            if (str.count > 10) {
-                let formatter = NumberFormatter()
-                formatter.numberStyle = .scientific
-                formatter.positiveFormat = "0.#######E+0"
-                formatter.exponentSymbol = "e"
-                if let scientificFormatted = formatter.string(for: num) {
-                    str = scientificFormatted
-                }
-            } else if (num - floor(num) == 0) {
-                str = String(format: "%.0f", num)
-            }
-        }
-        outputLabel.text = str
-    }
+    
     
     override func viewDidLoad() {
     super.viewDidLoad()
-        
-        // hooking up button callbacks
         for button in numberbuttons! {
-            button.button.addTarget(self, action: #selector(numberButtonPressed(_:)), for: .touchUpInside)
+            button.button.addTarget(self, action: #selector(numberButtonPressed(_:)),
+                                    for: .touchUpInside)
         }
         for button in operatorbuttons! {
-            button.button.addTarget(self, action: #selector(operatorButtonPressed(_:)), for: .touchUpInside)
+            button.button.addTarget(self, action: #selector(operatorButtonPressed(_:)),
+                                    for: .touchUpInside)
         }
-        equalsButton.button.addTarget(self, action: #selector(equalsButtonPressed), for: .touchUpInside)
-        cancelButton.button.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
+        for button in modifierButtons! {
+            button.button.addTarget(self, action: #selector(modifierButtonPressed(_:)),
+                                    for: .touchUpInside)
+        }
+        equalsButton.button.addTarget(self, action: #selector(equalsButtonPressed),
+                                      for: .touchUpInside)
+        cancelButton.button.addTarget(self, action: #selector(cancelButtonPressed),
+                                      for: .touchUpInside)
+        
     }
 }

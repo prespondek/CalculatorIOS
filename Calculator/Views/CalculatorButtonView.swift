@@ -16,6 +16,9 @@ class CalculatorButtonView : UIView {
     @IBInspectable var text : String = "" {
         didSet { updateLabel(string: text) }
     }
+    @IBInspectable var normalColor : UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0) {
+        didSet { button.updateColor(color: normalColor, state: .normal) }
+    }
     
     func updateLabel(string: String) {
         button.setTitle(string, for: UIControl.State.normal)
@@ -40,10 +43,12 @@ class CalculatorButtonView : UIView {
     
     func setup() {
         loadNib()
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.numberOfLines = 1
+        button.titleLabel?.minimumScaleFactor = 0.5
     }
     
-    deinit {
-    }
+    deinit { }
     
     func loadNib() {
         let bundle = Bundle(for: type(of: self))

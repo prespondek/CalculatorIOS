@@ -18,6 +18,13 @@ class OperationExpression : Operation {
     var lastSign : Character? {
         return operators.last
     }
+    var lastNumber : Double? {
+        return operands.last?.calculate()
+    }
+    func changeLast(op: Operation) {
+        _ = operands.popLast()
+        operands.append(op)
+    }
     func isEmpty() -> Bool {
         return operators.isEmpty && operands.isEmpty
     }

@@ -20,6 +20,9 @@ import UIKit
     @IBInspectable var selectedColor : UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0) {
         didSet { updateColor(color: selectedColor, state: .selected) }
     }
+    @IBInspectable var normalColor : UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0) {
+        didSet { updateColor(color: normalColor, state: .normal) }
+    }
     @IBInspectable var strokeColor : UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0) {
         didSet { updateStroke(color: strokeColor, width: strokeWidth) }
     }
