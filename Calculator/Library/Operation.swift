@@ -17,8 +17,8 @@ protocol Operation {
     func collapse()
     func clear()
     func set(_ value: Operation)
-    func set(_ value: Double)
-    func calculate() -> Double
+    func set(_ value: Decimal)
+    func calculate() -> Decimal
     func add(_ other: Operation)
     func subtract(_ other: Operation)
     func multiply(_ other: Operation)

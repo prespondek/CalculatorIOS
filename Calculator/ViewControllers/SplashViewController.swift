@@ -11,7 +11,11 @@ import UIKit
 class SplashViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+        var time = 3.0
+        if ProcessInfo.processInfo.arguments.contains("--testing") {
+            time = 0.0
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
             self.performSegue( withIdentifier: "SplashSerge", sender: self)
         }
     }

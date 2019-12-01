@@ -49,55 +49,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXA-FG-V6V">
                                 <rect key="frame" x="44" y="0.0" width="808" height="393"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCO-hr-wED" customClass="StrokedView" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="792" height="76"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yrt-NY-tFA">
-                                                <rect key="frame" x="8" y="8" width="776" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                                        <color key="value" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                        <real key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Output" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4r4-xY-S5J">
+                                        <rect key="frame" x="8" y="8" width="792" height="72"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Output"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="yrt-NY-tFA" secondAttribute="bottom" id="MZY-23-qOf"/>
-                                            <constraint firstAttribute="height" constant="76" id="QRr-MG-Udt"/>
-                                            <constraint firstItem="yrt-NY-tFA" firstAttribute="leading" secondItem="BCO-hr-wED" secondAttribute="leadingMargin" id="evA-lh-MKC"/>
-                                            <constraint firstItem="yrt-NY-tFA" firstAttribute="top" secondItem="BCO-hr-wED" secondAttribute="topMargin" id="rtW-vC-HKw"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="yrt-NY-tFA" secondAttribute="trailing" id="wMi-v5-1uF"/>
+                                            <constraint firstAttribute="height" constant="72" id="YkL-Md-qnG"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                                <color key="value" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dO-LK-JE9">
-                                        <rect key="frame" x="8" y="92" width="792" height="293"/>
+                                        <rect key="frame" x="8" y="88" width="792" height="297"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVr-Gq-Tq3" userLabel="C" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="192" height="52.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="C"/>
@@ -107,126 +72,126 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoM-mh-zP0" userLabel="±" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="200" y="0.0" width="192" height="52.5"/>
+                                                <rect key="frame" x="200" y="0.0" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="±"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLF-ac-2FV" userLabel="%" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="400" y="0.0" width="192" height="52"/>
+                                                <rect key="frame" x="400" y="0.0" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="%"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGB-Fc-efu" userLabel="+" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="600" y="0.0" width="192" height="52"/>
+                                                <rect key="frame" x="600" y="0.0" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="+"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmj-DC-nc1" userLabel="1" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="60" width="192" height="52"/>
+                                                <rect key="frame" x="0.0" y="60.5" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="1"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2p-MS-OA3" userLabel="2" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="200" y="60.5" width="191.5" height="52"/>
+                                                <rect key="frame" x="200" y="61" width="191.5" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="2"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yU8-7K-2Yt" userLabel="3" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="399.5" y="60" width="192" height="52.5"/>
+                                                <rect key="frame" x="399.5" y="61" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="3"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEW-u6-jTy" userLabel="-" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="600.5" y="60" width="191.5" height="52.5"/>
+                                                <rect key="frame" x="600.5" y="61" width="191.5" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="−"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPs-sX-p6N" userLabel="4" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="120" width="192" height="52.5"/>
+                                                <rect key="frame" x="0.0" y="121.5" width="192" height="53.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="4"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlC-Ay-rGU" userLabel="5" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="200" y="120.5" width="192" height="52.5"/>
+                                                <rect key="frame" x="200" y="122" width="192" height="53.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="5"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a87-Z3-Q3l" userLabel="6" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="400" y="120.5" width="192" height="52"/>
+                                                <rect key="frame" x="400" y="122" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="6"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeT-09-faL" userLabel="×" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="600" y="120.5" width="192" height="52"/>
+                                                <rect key="frame" x="600" y="122" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="×"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lO-cL-lf7" userLabel="8" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="200" y="181" width="192" height="52"/>
+                                                <rect key="frame" x="200" y="183.5" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="8"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWY-QN-v8l" userLabel="9" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="400" y="180.5" width="192" height="52.5"/>
+                                                <rect key="frame" x="400" y="183" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="9"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1J-sd-Wqv" userLabel="÷" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="600" y="180.5" width="192" height="52.5"/>
+                                                <rect key="frame" x="600" y="183" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="÷"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdK-hL-nbM" userLabel="0" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="240.5" width="391" height="52.5"/>
+                                                <rect key="frame" x="0.0" y="244" width="391" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="0"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaV-ae-D7G" userLabel="=" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="399" y="241" width="192" height="52"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaV-ae-D7G" userLabel="." customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="399" y="244" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="."/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgJ-6E-Fhv" userLabel="=" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="600" y="241" width="192" height="52"/>
+                                                <rect key="frame" x="600" y="244" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="="/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAl-gm-Spc" userLabel="7" customClass="CalculatorButtonView" customModule="Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="180.5" width="192" height="52"/>
+                                                <rect key="frame" x="0.0" y="183" width="192" height="53"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="7"/>
@@ -316,13 +281,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="BCO-hr-wED" firstAttribute="trailing" secondItem="zXA-FG-V6V" secondAttribute="trailingMargin" id="1hC-iZ-wbh"/>
                                     <constraint firstItem="7dO-LK-JE9" firstAttribute="bottom" secondItem="zXA-FG-V6V" secondAttribute="bottomMargin" id="AkP-Zh-cA9"/>
-                                    <constraint firstItem="BCO-hr-wED" firstAttribute="top" secondItem="zXA-FG-V6V" secondAttribute="topMargin" id="FEY-es-hq2"/>
                                     <constraint firstItem="7dO-LK-JE9" firstAttribute="trailing" secondItem="zXA-FG-V6V" secondAttribute="trailingMargin" id="KHV-cf-Akw"/>
-                                    <constraint firstItem="7dO-LK-JE9" firstAttribute="top" secondItem="BCO-hr-wED" secondAttribute="bottom" constant="8" id="US0-wA-liC"/>
-                                    <constraint firstItem="BCO-hr-wED" firstAttribute="leading" secondItem="zXA-FG-V6V" secondAttribute="leadingMargin" id="Vn5-e9-sQW"/>
+                                    <constraint firstItem="7dO-LK-JE9" firstAttribute="top" secondItem="4r4-xY-S5J" secondAttribute="bottom" constant="8" id="Lda-ee-Hqw"/>
+                                    <constraint firstAttribute="trailing" secondItem="4r4-xY-S5J" secondAttribute="trailing" constant="8" id="UCP-f0-uqn"/>
+                                    <constraint firstItem="4r4-xY-S5J" firstAttribute="top" secondItem="zXA-FG-V6V" secondAttribute="top" constant="8" id="XSq-5W-dgX"/>
                                     <constraint firstItem="7dO-LK-JE9" firstAttribute="leading" secondItem="zXA-FG-V6V" secondAttribute="leadingMargin" id="hHc-wL-n2K"/>
+                                    <constraint firstItem="4r4-xY-S5J" firstAttribute="leading" secondItem="zXA-FG-V6V" secondAttribute="leading" constant="8" id="rZB-r9-3M1"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -339,7 +304,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="eVr-Gq-Tq3" id="zBT-b2-uid"/>
                         <outlet property="equalsButton" destination="LgJ-6E-Fhv" id="ubj-WQ-eaq"/>
-                        <outlet property="outputLabel" destination="yrt-NY-tFA" id="mgC-Qs-fHU"/>
+                        <outlet property="outputLabel" destination="4r4-xY-S5J" id="en9-bv-BTj"/>
                         <outletCollection property="numberbuttons" destination="NlC-Ay-rGU" collectionClass="NSMutableArray" id="tSv-0x-ihw"/>
                         <outletCollection property="operatorbuttons" destination="m1J-sd-Wqv" collectionClass="NSMutableArray" id="ldM-ov-gc0"/>
                         <outletCollection property="numberbuttons" destination="mdK-hL-nbM" collectionClass="NSMutableArray" id="ZVj-9W-Mbb"/>

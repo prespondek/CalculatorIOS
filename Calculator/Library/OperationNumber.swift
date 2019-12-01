@@ -19,12 +19,12 @@ class OperationNumber : Operation {
     
     func collapse() {}
     
-    func calculate() -> Double {
+    func calculate() -> Decimal {
         guard let value = _value else { return 0.0 }
         return value
     }
     
-    private var _value : Double?
+    private var _value : Decimal?
     
     func isEmpty() -> Bool {
         return _value == nil
@@ -40,11 +40,11 @@ class OperationNumber : Operation {
         _value = value.calculate()
     }
     
-    func set(_ value: Double) {
+    func set(_ value: Decimal) {
         _value = value
     }
     
-    convenience init(_ value: Double) {
+    convenience init(_ value: Decimal) {
         self.init()
         self._value = value
     }

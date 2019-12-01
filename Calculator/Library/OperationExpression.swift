@@ -18,7 +18,7 @@ class OperationExpression : Operation {
     var lastSign : Character? {
         return operators.last
     }
-    var lastNumber : Double? {
+    var lastNumber : Decimal? {
         return operands.last?.calculate()
     }
     func changeLast(op: Operation) {
@@ -55,7 +55,7 @@ class OperationExpression : Operation {
         operands.append(value)
     }
     
-    func set(_ value: Double) {
+    func set(_ value: Decimal) {
         clear()
         operands.append(OperationNumber(value))
     }
@@ -64,7 +64,7 @@ class OperationExpression : Operation {
         operators.removeAll()
     }
     
-    func calculate() -> Double {
+    func calculate() -> Decimal {
         if operands.count == 0 { return 0 }
         // order of operations. Collaspe the multiply and divides first.
         let out = OperationExpression(self)
@@ -110,7 +110,7 @@ class OperationExpression : Operation {
         default: return 0
         }
     }
-    func signFunc(_ sign: Character) -> (Double,Double)->Double{
+    func signFunc(_ sign: Character) -> (Decimal,Decimal)->Decimal{
         switch sign {
         case "×": return { return $0*$1 }
         case "÷": return { return $0/$1 }
@@ -132,25 +132,25 @@ class OperationExpression : Operation {
         appendOperation(sign: "÷", other: other)
     }
     
-    static func -=(_ left: inout OperationExpression,_ right: Double) {
+    static func -=(_ left: inout OperationExpression,_ right: Decimal) {
         left -= OperationNumber(right)
     }
     static func -=(_ left: inout OperationExpression,_ right: Operation) {
         left.subtract(right)
     }
-    static func +=(_ left: inout OperationExpression,_ right: Double) {
+    static func +=(_ left: inout OperationExpression,_ right: Decimal) {
         left += OperationNumber(right)
     }
     static func +=(_ left: inout OperationExpression,_ right: Operation) {
         left.add(right)
     }
-    static func *=(_ left: inout OperationExpression,_ right: Double) {
+    static func *=(_ left: inout OperationExpression,_ right: Decimal) {
         left *= OperationNumber(right)
     }
     static func *=(_ left: inout OperationExpression,_ right: Operation) {
         left.multiply(right)
     }
-    static func /=(_ left: inout OperationExpression,_ right: Double) {
+    static func /=(_ left: inout OperationExpression,_ right: Decimal) {
         left /= OperationNumber(right)
     }
     static func /=(_ left: inout OperationExpression,_ right: Operation) {
