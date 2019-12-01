@@ -43,7 +43,7 @@ class CalculatorTests: XCTestCase {
         var op = OperationExpression()
         op.set(2)
         op /= 0
-        XCTAssert(op.calculate().isInfinite, "Not infinite")
+        XCTAssert(op.calculate().isNaN, "Not nan")
         op.clear()
         op.set(0)
         op /= 0
