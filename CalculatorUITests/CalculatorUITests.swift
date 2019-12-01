@@ -43,6 +43,17 @@ class CalculatorUITests: XCTestCase {
         let app = XCUIApplication()
         // UI tests must launch the application that they test.
         primeTests(app: app, test: {
+            app.buttons["0"].tap()
+            app.buttons["0"].tap()
+            XCTAssertEqual(app.textFields["Output"].value as! String, "0")
+            app.buttons["."].tap()
+            app.buttons["1"].tap()
+            XCTAssertEqual(app.textFields["Output"].value as! String, "0.1")
+            app.buttons["."].tap()
+            app.buttons["0"].tap()
+            XCTAssertEqual(app.textFields["Output"].value as! String, "0.10")
+            app.buttons["C"].tap()
+            XCTAssertEqual(app.textFields["Output"].value as! String, "0")
             app.buttons["1"].tap()
             app.buttons["+"].tap()
             app.buttons["2"].tap()

@@ -36,21 +36,28 @@ class CalculatorViewModel
     
     func insertCharacter(pos: Int, char: Character) {
         // ignore "0" when first character is "0"
-        if output == nil || output == "0" {
-            if (char == "0" && expression.isEmpty()) { return }
-            else if ( char == "." ) {
-                output = String("0.")
-            }
-            else {
-                output = String(char)
+        if isOutputZero() {
+            switch char {
+            case "0": if expression.isEmpty() { return }
+            case ".": output = String("0.")
+            default: output = String(char)
             }
         } else {
-            if ( char == "." ) {
-                if ( output?.first(where:{$0 == "."}) != nil ) { return }
+            switch char {
+            case ".": if isOutputDecimal() { return }
+                fallthrough
+            default: output?.append(char)
             }
-            output?.append(char)
         }
         output = observer?.calculatorOutput(output ?? "0")
+    }
+    
+    func isOutputDecimal() -> Bool {
+        return ( output?.first(where:{$0 == "."}) != nil )
+    }
+    
+    func isOutputZero() -> Bool {
+        return output == nil || output == "0"
     }
     
     func insertFunction(pos: Int, sign: Character) {
